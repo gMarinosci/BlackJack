@@ -3,12 +3,14 @@ package model;
 import model.rules.HitStrategy;
 import model.rules.NewGameStrategy;
 import model.rules.RulesFactory;
+import model.rules.WinsStrategy;
 
 /**
  * Represents a dealer player that handles the deck of cards and runs the game using rules.
  */
 public class Dealer extends Player {
 
+  private WinsStrategy winsRule;
   private Deck deck;
   private NewGameStrategy newGameRule;
   private HitStrategy hitRule;
@@ -22,6 +24,7 @@ public class Dealer extends Player {
 
     newGameRule = rulesFactory.getNewGameRule();
     hitRule = rulesFactory.getHitRule();
+    winsRule = rulesFactory.getWinsRule();
   }
 
   /**
@@ -61,7 +64,7 @@ public class Dealer extends Player {
   /**
    * Checks if the dealer is the winner compared to a player.
 
-   * @param player The player to check agains.
+   * @param player The player to check against.
    * @return True if the dealer is the winner, false if the player is the winner.
    */
   public boolean isDealerWinner(Player player) {
@@ -69,6 +72,8 @@ public class Dealer extends Player {
       return true;
     } else if (calcScore() > maxScore) {
       return false;
+    } else if (calcScore() == player.calcScore()){
+      return winsRule.winGame();
     }
     return calcScore() >= player.calcScore();
   }

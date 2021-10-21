@@ -22,4 +22,13 @@ public class RulesFactory {
   public NewGameStrategy getNewGameRule() {
     return new AmericanNewGameStrategy();
   }
+
+  /**
+   * Crates the rule to use when starting a new game.
+
+   * @return The rule to use.
+   */
+  public WinsStrategy getWinsRule() { return new PlayerWinsStrategy(); }
+
+
 }
