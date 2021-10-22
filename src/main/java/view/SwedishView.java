@@ -83,6 +83,9 @@ public class SwedishView implements View {
     System.out.println("");
   }
 
+  /**
+   * Will output pause and stop for 2sec for the observer pattern implementation requirement.
+   */
   public void displayPause() {
     System.out.println("\n*paus*\n");
     try {

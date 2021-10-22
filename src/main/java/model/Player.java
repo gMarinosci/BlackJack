@@ -17,6 +17,11 @@ public class Player {
     subscribers = new ArrayList<>();
   }
 
+  /**
+   * Notifies subscribers for the observer pattern.
+
+   * @param card the new card.
+   */
   public void notifySubscribers(Card card) {
     for (NewCardObserver s : subscribers) {
       s.newCard(card);
