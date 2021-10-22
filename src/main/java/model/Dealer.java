@@ -67,7 +67,7 @@ public class Dealer extends Player {
       return true;
     } else if (calcScore() > maxScore) {
       return false;
-    } else if (calcScore() == player.calcScore()){
+    } else if (calcScore() == player.calcScore()) {
       return winsRule.winGame();
     }
     return calcScore() >= player.calcScore();

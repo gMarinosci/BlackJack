@@ -22,6 +22,7 @@ public class Player {
       s.newCard(card);
     }
   }
+
   public void addSubscriber(NewCardObserver s) {
     subscribers.add(s);
   }

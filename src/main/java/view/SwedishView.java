@@ -87,7 +87,7 @@ public class SwedishView implements View {
     System.out.println("\n*paus*\n");
     try {
       Thread.sleep(2000);
-    } catch(InterruptedException e) {
+    } catch (InterruptedException e) {
       e.printStackTrace();
     }
   }

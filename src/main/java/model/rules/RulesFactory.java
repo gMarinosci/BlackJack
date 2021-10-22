@@ -28,7 +28,9 @@ public class RulesFactory {
 
    * @return The rule to use.
    */
-  public WinsStrategy getWinsRule() { return new PlayerWinsStrategy(); }
+  public WinsStrategy getWinsRule() {
+    return new PlayerWinsStrategy();
+  }
 
 
 }

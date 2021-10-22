@@ -8,8 +8,8 @@ class Soft17HitStrategy implements HitStrategy {
 
   public boolean doHit(Player dealer) {
 
-    for(Card temp: dealer.getHand()){
-      if(temp.getValue().equals(Card.Value.Ace) && dealer.calcScore() == hitLimit){
+    for (Card temp : dealer.getHand()) {
+      if (temp.getValue().equals(Card.Value.Ace) && dealer.calcScore() == hitLimit) {
         return dealer.calcScore() - 10 < hitLimit;
       }
     }

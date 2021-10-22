@@ -4,7 +4,7 @@ import model.Dealer;
 import model.Deck;
 import model.Player;
 
-public class PlayerWinsStrategy implements WinsStrategy{
+public class PlayerWinsStrategy implements WinsStrategy {
 
 
   /**
