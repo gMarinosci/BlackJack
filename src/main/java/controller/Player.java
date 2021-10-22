@@ -1,5 +1,6 @@
 package controller;
 
+import model.Card;
 import model.Game;
 import view.View;
 
@@ -7,8 +8,11 @@ import view.View;
 /**
  * Scenario controller for playing the game.
  */
-public class Player {
+public class Player implements model.NewCardObserver {
 
+  Player(model.Player p) {
+    p.addSubscriber(this);
+  }
   /**
    * Runs the play use case.
 
@@ -37,5 +41,9 @@ public class Player {
     }
 
     return input != 'q';
+  }
+
+  @Override
+  public void newCard(Card card) {
   }
 }

@@ -9,22 +9,15 @@ class AmericanNewGameStrategy implements NewGameStrategy {
 
   public boolean newGame(Deck deck, Dealer dealer, Player player) {
     //player turn
-    playTurn(deck, player, true);
+    dealer.playTurn(deck, player, true);
     //dealer turn
-    playTurn(deck, dealer, true);
+    dealer.playTurn(deck, dealer, true);
     //player turn
-    playTurn(deck, player, true);
+    dealer.playTurn(deck, player, true);
     //dealer turn
-    playTurn(deck, dealer, false);
+    dealer.playTurn(deck, dealer, false);
 
     return true;
   }
 
-  @Override
-  public void playTurn(Deck deck, Player player, boolean bool) {
-    Card.Mutable c;
-    c = deck.getCard();
-    c.show(bool);
-    player.dealCard(c);
-  }
 }

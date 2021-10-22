@@ -9,7 +9,6 @@ import model.rules.WinsStrategy;
  * Represents a dealer player that handles the deck of cards and runs the game using rules.
  */
 public class Dealer extends Player {
-
   private WinsStrategy winsRule;
   private Deck deck;
   private NewGameStrategy newGameRule;
@@ -51,11 +50,7 @@ public class Dealer extends Player {
    */
   public boolean hit(Player player) {
     if (deck != null && player.calcScore() < maxScore && !isGameOver()) {
-      Card.Mutable c;
-      c = deck.getCard();
-      c.show(true);
-      player.dealCard(c);
-
+      playTurn(deck, player, true);
       return true;
     }
     return false;
@@ -97,14 +92,19 @@ public class Dealer extends Player {
     if (deck != null) {
       showHand();
       while (hitRule.doHit(this) == true) {
-        Card.Mutable c;
-        c = deck.getCard();
-        c.show(true);
-        dealCard(c);
+        playTurn(deck, this, true);
       }
       return true;
     }
     return false;
+  }
+
+  public void playTurn(Deck deck, Player player, boolean bool) {
+    Card.Mutable c;
+    c = deck.getCard();
+    c.show(bool);
+    player.dealCard(c);
+    player.notifySubscribers(c, player.);
   }
 
 }

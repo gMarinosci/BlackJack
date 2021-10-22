@@ -70,6 +70,7 @@ public class EnglishView implements View {
 
   }
 
+
   /**
    * Displays pause used in observer pattern implementation requirement.
    */

@@ -25,5 +25,4 @@ public interface NewGameStrategy {
    * @param player Either player or dealer, depending on whose turn it is.
    * @param bool Describes if the card should be hidden or not, according to some rule.
    */
-  void playTurn(Deck deck, Player player, boolean bool);
 }
