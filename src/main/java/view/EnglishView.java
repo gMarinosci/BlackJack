@@ -69,4 +69,16 @@ public class EnglishView implements View {
     }
 
   }
+
+  /**
+   * Displays pause used in observer pattern implementation requirement.
+   */
+  public void displayPause() {
+    System.out.println("\n*pause*\n");
+    try {
+      Thread.sleep(2000);
+    } catch(InterruptedException e) {
+      e.printStackTrace();
+    }
+  }
 }

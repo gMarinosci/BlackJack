@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -10,11 +11,25 @@ public class Player {
 
   private List<Card.Mutable> hand;
   protected final int maxScore = 21;
+  ArrayList<NewCardObserver> subscribers;
 
   public Player() {
     hand = new LinkedList<Card.Mutable>();
+    subscribers = new ArrayList<>();
   }
 
+  public void notifySubscribers(Card card) {
+    for (NewCardObserver s : subscribers) {
+      s.newCard(card);
+    }
+  }
+  public void addSubscriber(NewCardObserver s) {
+    subscribers.add(s);
+  }
+
+  public void removeSubscriber(NewCardObserver s) {
+    subscribers.remove(s);
+  }
   /**
    * Adds a card to the Player's hand. 
 
