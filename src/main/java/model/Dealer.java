@@ -104,7 +104,7 @@ public class Dealer extends Player {
     c = deck.getCard();
     c.show(bool);
     player.dealCard(c);
-    player.notifySubscribers(c, player.);
+    player.notifySubscribers(c);
   }
 
 }
