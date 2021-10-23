@@ -1,5 +1,9 @@
 package view;
 
+import model.Card;
+
+import java.util.List;
+
 /**
  * Encapsulates the generic view functionality.
  */
@@ -22,23 +26,9 @@ public interface View {
 
    * @param card The card to display.
    */
-  void displayCard(model.Card card);
+  void displayPlayerCard(model.Card card, int score, Iterable<Card> hand);
 
-  /**
-   * Displays the cards and score of the player.
-
-   * @param hand the player's hand.
-   * @param score the player's score.
-   */
-  void displayPlayerHand(Iterable<model.Card> hand, int score);
-
-  /**
-   * Displays the cards and score of the dealer.
-
-   * @param hand the dealer's score.
-   * @param score the players's score.
-   */
-  void displayDealerHand(Iterable<model.Card> hand, int score);
+  void displayDealerCard(model.Card card, int score, Iterable<Card> hand);
 
   /**
    * Displays the winner of the game.

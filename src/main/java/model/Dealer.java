@@ -50,7 +50,7 @@ public class Dealer extends Player {
    */
   public boolean hit(Player player) {
     if (deck != null && player.calcScore() < maxScore && !isGameOver()) {
-      playTurn(deck, player, true);
+      playerTurn(deck, player, true);
       return true;
     }
     return false;
@@ -92,19 +92,18 @@ public class Dealer extends Player {
     if (deck != null) {
       showHand();
       while (hitRule.doHit(this) == true) {
-        playTurn(deck, this, true);
+        dealerTurn(deck, this, true);
       }
       return true;
     }
     return false;
   }
 
-  public void playTurn(Deck deck, Player player, boolean bool) {
+  public void dealerTurn(Deck deck, Dealer dealer, boolean bool) {
     Card.Mutable c;
     c = deck.getCard();
     c.show(bool);
-    player.dealCard(c);
-    player.notifySubscribers(c);
+    dealer.dealCard(c);
+    notifySubscribers(c, 2);
   }
-
 }

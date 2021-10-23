@@ -17,17 +17,17 @@ public class Player {
     subscribers = new ArrayList<>();
   }
 
-  /**
-   * Notifies subscribers for the observer pattern.
-
-   * @param card the new card.
-   */
-  public void notifySubscribers(Card card) {
-    for (NewCardObserver s : subscribers) {
-      s.newCard(card);
+  public void notifySubscribers(Card card, int n) {
+    if (n == 1) {
+      for (NewCardObserver s : subscribers) {
+        s.playerNewCard(card);
+      }
+    } else if (n == 2){
+        for (NewCardObserver s : subscribers) {
+          s.dealerNewCard(card);
+        }
     }
   }
-
   public void addSubscriber(NewCardObserver s) {
     subscribers.add(s);
   }
@@ -99,5 +99,13 @@ public class Player {
     }
 
     return score;
+  }
+
+  public void playerTurn(Deck deck, Player player, boolean bool) {
+    Card.Mutable c;
+    c = deck.getCard();
+    c.show(bool);
+    player.dealCard(c);
+    notifySubscribers(c, 1);
   }
 }

@@ -2,6 +2,7 @@ package controller;
 
 import model.Card;
 import model.Game;
+import view.EnglishView;
 import view.View;
 
 
@@ -9,22 +10,22 @@ import view.View;
  * Scenario controller for playing the game.
  */
 public class Player implements model.NewCardObserver {
+  Game game;
+  View view;
 
-  Player(model.Player p) {
-    p.addSubscriber(this);
+  Player() {
+    game = new Game();
+    view = new EnglishView();
+    game.getPlayer().addSubscriber(this);
+    game.getDealer().addSubscriber(this);
   }
   /**
    * Runs the play use case.
 
-   * @param game The game state.
-   * @param view The view to use.
    * @return True as long as the game should continue.
    */
-  public boolean play(Game game, View view) {
+  public boolean play() {
     view.displayWelcomeMessage();
-
-    view.displayDealerHand(game.getDealerHand(), game.getDealerScore());
-    view.displayPlayerHand(game.getPlayerHand(), game.getPlayerScore());
 
     if (game.isGameOver()) {
       view.displayGameOver(game.isDealerWinner());
@@ -44,6 +45,12 @@ public class Player implements model.NewCardObserver {
   }
 
   @Override
-  public void newCard(Card card) {
+  public void playerNewCard(Card card) {
+    view.displayPlayerCard(card, game.getPlayerScore(), game.getPlayerHand());
+  }
+
+  @Override
+  public void dealerNewCard(Card card) {
+    view.displayDealerCard(card, game.getDealerScore(), game.getDealerHand());
   }
 }

@@ -15,11 +15,10 @@ public class App {
   */
   public static void main(String[] args) {
 
-    Game g = new Game();
-    View v = new EnglishView(); // new SwedishView();
-    Player ctrl = new Player(g.getPlayer());
 
-    while (ctrl.play(g, v)) {
+    Player ctrl = new Player();
+
+    while (ctrl.play()) {
 
     }
   }

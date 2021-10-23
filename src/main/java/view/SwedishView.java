@@ -1,5 +1,9 @@
 package view;
 
+import model.Card;
+
+import java.util.List;
+
 /**
  * Implements a Swedish console view.
  */
@@ -41,23 +45,11 @@ public class SwedishView implements View {
 
    * @param card The card to display.
    */
-  public void displayCard(model.Card card) {
-    if (card.getColor() == model.Card.Color.Hidden) {
-      System.out.println("Dolt Kort");
-    } else {
-      String[] colors = { "Hjärter", "Spader", "Ruter", "Klöver" };
-      String[] values = { "två", "tre", "fyra", "fem", "sex", "sju", "åtta", "nio", "tio",
-                          "knekt", "dam", "kung", "ess" };
-      System.out.println("" + colors[card.getColor().ordinal()] + " " + values[card.getValue().ordinal()]);
-    }
-  }
+  public void displayPlayerCard(model.Card card, int score, Iterable<Card> hand) {
 
-  public void displayPlayerHand(Iterable<model.Card> hand, int score) {
-    displayHand("Spelare", hand, score);
   }
+  public void displayDealerCard(model.Card card, int score, Iterable<Card> hand) {
 
-  public void displayDealerHand(Iterable<model.Card> hand, int score) {
-    displayHand("Croupier", hand, score);
   }
 
   /**
@@ -74,24 +66,14 @@ public class SwedishView implements View {
     }
   }
 
-  private void displayHand(String name, Iterable<model.Card> hand, int score) {
-    System.out.println(name + " Har: " + score);
-    for (model.Card c : hand) {
-      displayCard(c);
-    }
-    System.out.println("Poäng: " + score);
-    System.out.println("");
-  }
-
-  /**
-   * Will output pause and stop for 2sec for the observer pattern implementation requirement.
-   */
   public void displayPause() {
     System.out.println("\n*paus*\n");
     try {
       Thread.sleep(2000);
-    } catch (InterruptedException e) {
+    } catch(InterruptedException e) {
       e.printStackTrace();
     }
   }
+
+
 }

@@ -9,13 +9,13 @@ class AmericanNewGameStrategy implements NewGameStrategy {
 
   public boolean newGame(Deck deck, Dealer dealer, Player player) {
     //player turn
-    dealer.playTurn(deck, player, true);
+    player.playerTurn(deck, player, true);
     //dealer turn
-    dealer.playTurn(deck, dealer, true);
+    dealer.dealerTurn(deck, dealer, true);
     //player turn
-    dealer.playTurn(deck, player, true);
+    player.playerTurn(deck, player, true);
     //dealer turn
-    dealer.playTurn(deck, dealer, false);
+    dealer.dealerTurn(deck, dealer, false);
 
     return true;
   }
