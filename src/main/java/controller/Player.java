@@ -48,16 +48,8 @@ public class Player implements model.NewCardObserver {
       status = false;
     }
 
-    if (!status) {
-      view.newGameMessage();
-      int input = view.getInput();
-
-      if (input == 'p') {
-        game.newGame();
-        status = true;
-      } else if(input == 'q') {
-        return false;
-      }
+    if (!checkStatus()) {
+      return false;
     }
 
     view.displayPlayerHand(game.getPlayerHand(), game.getPlayerScore());
@@ -85,6 +77,23 @@ public class Player implements model.NewCardObserver {
         break;
     }
     return true;
+  }
+
+  public boolean checkStatus() {
+
+    if (!status) {
+      view.newGameMessage();
+      int input = view.getInput();
+
+      if (input == 'p') {
+        game.newGame();
+        status = true;
+        return true;
+      } else if(input == 'q') {
+        return false;
+      }
+    }
+    return false;
   }
 
   @Override

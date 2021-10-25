@@ -91,6 +91,7 @@ public class EnglishView implements View {
       System.out.println("Dealer Won!");
     } else {
       System.out.println("You Won!");
+      System.out.println();
     }
 
   }
