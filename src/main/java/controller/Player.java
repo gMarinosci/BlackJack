@@ -60,6 +60,8 @@ public class Player implements model.NewCardObserver {
       }
     }
 
+    view.displayPlayerHand(game.getPlayerHand(), game.getPlayerScore());
+    view.displayDealerHand(game.getDealerHand(), game.getDealerScore());
     view.displayMenu();
 
     int input = view.getInput();
@@ -72,6 +74,8 @@ public class Player implements model.NewCardObserver {
 
       case 's':
         game.stand();
+        view.displayPlayerHand(game.getPlayerHand(), game.getPlayerScore());
+        view.displayDealerHand(game.getDealerHand(), game.getDealerScore());
         break;
 
       case 'q':
@@ -85,11 +89,13 @@ public class Player implements model.NewCardObserver {
 
   @Override
   public void playerNewCard(Card card) {
+    view.displayPause();
     view.displayPlayerCard(card, game.getPlayerScore(), game.getPlayerHand());
   }
 
   @Override
   public void dealerNewCard(Card card) {
+    view.displayPause();
     view.displayDealerCard(card, game.getDealerScore(), game.getDealerHand());
   }
 }

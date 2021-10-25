@@ -45,20 +45,37 @@ public class EnglishView implements View {
     }
   }
 
-  public void displayPlayerCard(model.Card card, int score, Iterable<Card> hand) {
-    System.out.print("Player: ");
-    for (Card c: hand) {
-      System.out.print(c.getValue() + " of " + c.getColor() + " ");
+  public void displayCard(model.Card card) {
+    System.out.println("" + card.getValue() + " of " + card.getColor());
+  }
+
+  public void displayHand(String name, Iterable<model.Card> hand, int score) {
+    System.out.println(name + " Has: ");
+    for (model.Card c : hand) {
+      displayCard(c);
     }
-    System.out.println(card.getValue() + " of " + card.getColor() + "Player gets new card");
+    System.out.println("Score: " + score);
+    System.out.println("");
+  }
+
+  public void displayPlayerHand(Iterable<model.Card> hand, int score) {
+    displayHand("Player", hand, score);
+  }
+
+  public void displayDealerHand(Iterable<model.Card> hand, int score) {
+    displayHand("Dealer", hand, score);
+  }
+
+  public void displayPlayerCard(model.Card card, int score, Iterable<Card> hand) {
+    System.out.print("Player draws: ");
+    displayCard(card);
+    System.out.println();
   }
 
   public void displayDealerCard(model.Card card, int score, Iterable<Card> hand) {
-    System.out.print("Dealer: ");
-    for (Card c: hand) {
-      System.out.print(c.getValue() + " of " + c.getColor() + " ");
-    }
-    System.out.println(card.getValue() + " of " + card.getColor() + "Dealer gets new card");
+    System.out.print("Dealer draws: ");
+    displayCard(card);
+    System.out.println();
   }
 
 

@@ -48,6 +48,27 @@ public class SwedishView implements View {
     }
   }
 
+  public void displayCard(model.Card card) {
+    System.out.println("" + card.getValue() + " of " + card.getColor());
+  }
+
+  public void displayHand(String name, Iterable<model.Card> hand, int score) {
+    System.out.println(name + " Has: ");
+    for (model.Card c : hand) {
+      displayCard(c);
+    }
+    System.out.println("Score: " + score);
+    System.out.println("");
+  }
+
+  public void displayPlayerHand(Iterable<model.Card> hand, int score) {
+    displayHand("Player", hand, score);
+  }
+
+  public void displayDealerHand(Iterable<model.Card> hand, int score) {
+    displayHand("Dealer", hand, score);
+  }
+
   /**
    * Displays a card.
 

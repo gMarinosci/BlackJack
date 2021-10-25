@@ -18,6 +18,14 @@ public interface View {
 
   void newGameMessage();
 
+  void displayCard(model.Card card);
+
+  void displayHand(String name, Iterable<model.Card> hand, int score);
+
+  void displayPlayerHand(Iterable<model.Card> hand, int score);
+
+  void displayDealerHand(Iterable<model.Card> hand, int score);
+
   /**
    * Returns pressed characters from the keyboard.
 
