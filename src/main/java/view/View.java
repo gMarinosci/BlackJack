@@ -1,8 +1,7 @@
 package view;
 
-import model.Card;
-
 import java.util.List;
+import model.Card;
 
 /**
  * Encapsulates the generic view functionality.

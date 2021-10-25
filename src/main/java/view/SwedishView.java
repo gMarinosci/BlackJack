@@ -1,8 +1,7 @@
 package view;
 
-import model.Card;
-
 import java.util.List;
+import model.Card;
 
 /**
  * Implements a Swedish console view.
@@ -77,8 +76,8 @@ public class SwedishView implements View {
   public void displayPlayerCard(model.Card card, int score, Iterable<Card> hand) {
 
   }
-  public void displayDealerCard(model.Card card, int score, Iterable<Card> hand) {
 
+  public void displayDealerCard(model.Card card, int score, Iterable<Card> hand) {
   }
 
   /**
@@ -99,7 +98,7 @@ public class SwedishView implements View {
     System.out.println("\n*paus*\n");
     try {
       Thread.sleep(2000);
-    } catch(InterruptedException e) {
+    } catch (InterruptedException e) {
       e.printStackTrace();
     }
   }

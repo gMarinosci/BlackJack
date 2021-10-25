@@ -97,6 +97,11 @@ public class Game {
     return player.calcScore();
   }
 
-  public Player getPlayer() { return this.player; }
-  public Player getDealer() { return this.dealer; }
+  public Player getPlayer() {
+    return this.player;
+  }
+
+  public Player getDealer() {
+    return this.dealer;
+  }
 }

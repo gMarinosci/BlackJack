@@ -1,8 +1,8 @@
 package view;
 
-import model.Card;
 
 import java.util.List;
+import model.Card;
 
 /**
  * Implements an english console view.

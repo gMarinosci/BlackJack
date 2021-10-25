@@ -89,7 +89,7 @@ public class Player implements model.NewCardObserver {
         game.newGame();
         status = true;
         return true;
-      } else if(input == 'q') {
+      } else if (input == 'q') {
         return false;
       }
     }

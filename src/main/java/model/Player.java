@@ -22,12 +22,13 @@ public class Player {
       for (NewCardObserver s : subscribers) {
         s.playerNewCard(card);
       }
-    } else if (n == 2){
-        for (NewCardObserver s : subscribers) {
-          s.dealerNewCard(card);
-        }
+    } else if (n == 2) {
+      for (NewCardObserver s : subscribers) {
+        s.dealerNewCard(card);
+      }
     }
   }
+
   public void addSubscriber(NewCardObserver s) {
     subscribers.add(s);
   }

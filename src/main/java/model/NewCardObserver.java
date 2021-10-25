@@ -5,5 +5,6 @@ package model;
  */
 public interface NewCardObserver {
   void playerNewCard(Card card);
+
   void dealerNewCard(Card card);
 }
