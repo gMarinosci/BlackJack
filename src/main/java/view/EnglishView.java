@@ -13,11 +13,18 @@ public class EnglishView implements View {
    * Shows a welcome message.
    */
   public void displayWelcomeMessage() {
-    for (int i = 0; i < 50; i++) {
+    for (int i = 0; i < 5; i++) {
       System.out.print("\n");
     }
     System.out.println("Hello Black Jack World");
-    System.out.println("Type 'p' to Play, 'h' to Hit, 's' to Stand or 'q' to Quit\n");
+  }
+
+  public void displayMenu() {
+    System.out.println("Type 'h' to Hit, 's' to Stand or 'q' to Quit\n");
+  }
+
+  public void newGameMessage() {
+    System.out.println("Type 'p' to start a new game or 'q' to quit.");
   }
 
   /**

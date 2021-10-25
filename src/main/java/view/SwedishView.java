@@ -22,6 +22,14 @@ public class SwedishView implements View {
     System.out.println("Skriv 'p' för att Spela, 'h' för nytt kort, 's' för att stanna 'q' för att avsluta\n");
   }
 
+  public void displayMenu() {
+    System.out.println("Type 'p' to start a new game, 'h' to Hit, 's' to Stand or 'q' to Quit\n");
+  }
+
+  public void newGameMessage() {
+    System.out.println("Type 'p' to start a new game.");
+  }
+
   /**
    * Returns pressed characters from the keyboard.
 

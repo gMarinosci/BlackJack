@@ -12,12 +12,14 @@ import view.View;
 public class Player implements model.NewCardObserver {
   Game game;
   View view;
+  boolean status;
 
   Player() {
     game = new Game();
     view = new EnglishView();
     game.getPlayer().addSubscriber(this);
     game.getDealer().addSubscriber(this);
+    status = false;
   }
   /**
    * Runs the play use case.
@@ -27,21 +29,58 @@ public class Player implements model.NewCardObserver {
   public boolean play() {
     view.displayWelcomeMessage();
 
+    while (selection()) {
+
+    }
+
+    return false;
+  }
+
+  /**
+   * Handles the player's decisions.
+   *
+   * @return false if the player wants to quit.
+   */
+  public boolean selection() {
+
     if (game.isGameOver()) {
       view.displayGameOver(game.isDealerWinner());
+      status = false;
     }
+
+    if (!status) {
+      view.newGameMessage();
+      int input = view.getInput();
+
+      if (input == 'p') {
+        game.newGame();
+        status = true;
+      } else if(input == 'q') {
+        return false;
+      }
+    }
+
+    view.displayMenu();
 
     int input = view.getInput();
 
-    if (input == 'p') {
-      game.newGame();
-    } else if (input == 'h') {
-      game.hit();
-    } else if (input == 's') {
-      game.stand();
-    }
+    switch (input) {
 
-    return input != 'q';
+      case 'h':
+        game.hit();
+        break;
+
+      case 's':
+        game.stand();
+        break;
+
+      case 'q':
+        return input != 'q';
+
+      default:
+        break;
+    }
+    return true;
   }
 
   @Override

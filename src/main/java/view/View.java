@@ -14,6 +14,10 @@ public interface View {
    */
   void displayWelcomeMessage();
 
+  void displayMenu();
+
+  void newGameMessage();
+
   /**
    * Returns pressed characters from the keyboard.
 
