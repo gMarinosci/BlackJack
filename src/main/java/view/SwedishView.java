@@ -51,6 +51,13 @@ public class SwedishView implements View {
     System.out.println("" + card.getValue() + " of " + card.getColor());
   }
 
+  /**
+   * displays the hand of a player.
+
+   * @param name either player or dealer.
+   * @param hand hand of that player.
+   * @param score total score of the hand.
+   */
   public void displayHand(String name, Iterable<model.Card> hand, int score) {
     System.out.println(name + " Has: ");
     for (model.Card c : hand) {
@@ -94,6 +101,9 @@ public class SwedishView implements View {
     }
   }
 
+  /**
+   * implements the pause between each draw.
+   */
   public void displayPause() {
     System.out.println("\n*paus*\n");
     try {

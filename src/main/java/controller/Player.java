@@ -79,6 +79,11 @@ public class Player implements model.NewCardObserver {
     return true;
   }
 
+  /**
+   * Checks whether the game is running to customize the menu instruction messages.
+
+   * @return true, if the game is running.
+   */
   public boolean checkStatus() {
 
     if (!status) {

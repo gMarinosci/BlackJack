@@ -49,6 +49,13 @@ public class EnglishView implements View {
     System.out.println("" + card.getValue() + " of " + card.getColor());
   }
 
+  /**
+   * Displays the hand of a dealer or player.
+
+   * @param name either dealer or player.
+   * @param hand to display each card of the hand.
+   * @param score to display the total score of a player's hand.
+   */
   public void displayHand(String name, Iterable<model.Card> hand, int score) {
     System.out.println(name + " Has: ");
     for (model.Card c : hand) {
@@ -66,12 +73,26 @@ public class EnglishView implements View {
     displayHand("Dealer", hand, score);
   }
 
+  /**
+   * Displays the new card of the player.
+
+   * @param card The card to display.
+   * @param score total score of that player's hand.
+   * @param hand the player's hand.
+   */
   public void displayPlayerCard(model.Card card, int score, Iterable<Card> hand) {
     System.out.print("Player draws: ");
     displayCard(card);
     System.out.println();
   }
 
+  /**
+   * Displays the new card of the dealer.
+
+   * @param card the card to display.
+   * @param score total score of the dealer's hand
+   * @param hand dealer hand.
+   */
   public void displayDealerCard(model.Card card, int score, Iterable<Card> hand) {
     System.out.print("Dealer draws: ");
     displayCard(card);

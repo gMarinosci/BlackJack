@@ -17,6 +17,12 @@ public class Player {
     subscribers = new ArrayList<>();
   }
 
+  /**
+   * notifies subscribers for the observer pattern.
+
+   * @param card to keep track of what the new given out card is.
+   * @param n distinguishes whether it is the dealer or the player.
+   */
   public void notifySubscribers(Card card, int n) {
     if (n == 1) {
       for (NewCardObserver s : subscribers) {
@@ -102,6 +108,10 @@ public class Player {
     return score;
   }
 
+  /**
+   * It is the players turn. Was implemented to distinguish between player and dealer when notifying subscribers.
+
+   */
   public void playerTurn(Deck deck, Player player, boolean bool) {
     Card.Mutable c;
     c = deck.getCard();

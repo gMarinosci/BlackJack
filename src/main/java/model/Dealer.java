@@ -99,6 +99,10 @@ public class Dealer extends Player {
     return false;
   }
 
+  /**
+   * It is the dealers turn. Was implemented to distinguish between player and dealer when notifying subscribers.
+
+   */
   public void dealerTurn(Deck deck, Dealer dealer, boolean bool) {
     Card.Mutable c;
     c = deck.getCard();
