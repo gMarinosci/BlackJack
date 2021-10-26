@@ -21,10 +21,11 @@ public class Player implements model.NewCardObserver {
     game.getDealer().addSubscriber(this);
     status = false;
   }
+
   /**
    * Runs the play use case.
 
-   * @return True as long as the game should continue.
+   * @return False when the player wants to quit and selection() returns false.
    */
   public boolean play() {
     view.displayWelcomeMessage();
@@ -52,8 +53,7 @@ public class Player implements model.NewCardObserver {
       return false;
     }
 
-    view.displayPlayerHand(game.getPlayerHand(), game.getPlayerScore());
-    view.displayDealerHand(game.getDealerHand(), game.getDealerScore());
+    showTable();
     view.displayMenu();
 
     int input = view.getInput();
@@ -66,8 +66,7 @@ public class Player implements model.NewCardObserver {
 
       case 's':
         game.stand();
-        view.displayPlayerHand(game.getPlayerHand(), game.getPlayerScore());
-        view.displayDealerHand(game.getDealerHand(), game.getDealerScore());
+        showTable();
         break;
 
       case 'q':
@@ -98,7 +97,12 @@ public class Player implements model.NewCardObserver {
         return false;
       }
     }
-    return false;
+    return true;
+  }
+
+  public void showTable() {
+    view.displayPlayerHand(game.getPlayerHand(), game.getPlayerScore());
+    view.displayDealerHand(game.getDealerHand(), game.getDealerScore());
   }
 
   @Override

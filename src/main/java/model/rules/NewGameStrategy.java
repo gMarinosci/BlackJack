@@ -17,12 +17,4 @@ public interface NewGameStrategy {
    * @return True if the game could be started.
    */
   boolean newGame(Deck deck, Dealer dealer, Player player);
-
-  /**
-   * Deals the card to either the player or dealer.
-
-   * @param deck The deck to use to get cards from.
-   * @param player Either player or dealer, depending on whose turn it is.
-   * @param bool Describes if the card should be hidden or not, according to some rule.
-   */
 }
