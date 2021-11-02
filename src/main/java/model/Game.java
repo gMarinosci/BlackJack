@@ -12,7 +12,7 @@ public class Game {
    * Constructor that creates a new game instance with a dealer and player.
    */
   public Game() {
-    dealer = new Dealer(new model.rules.RulesFactory());
+    dealer = new Dealer(new model.rules.AmericanRulesFactory()); //You can put InternationalRulesFactory instead
     player = new Player();
   }
 
