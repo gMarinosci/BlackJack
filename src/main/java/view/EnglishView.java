@@ -7,7 +7,7 @@ import model.Card;
 /**
  * Implements an english console view.
  */
-public class EnglishView implements View {
+public class EnglishView extends View {
 
   /**
    * Shows a welcome message.
@@ -28,81 +28,7 @@ public class EnglishView implements View {
   }
 
   /**
-   * Returns pressed characters from the keyboard.
-
-   * @return the pressed character.
-   */
-  public int getInput() {
-    try {
-      int c = System.in.read();
-      while (c == '\r' || c == '\n') {
-        c = System.in.read();
-      }
-      return c;
-    } catch (java.io.IOException e) {
-      System.out.println("" + e);
-      return 0;
-    }
-  }
-
-  public void displayCard(model.Card card) {
-    System.out.println("" + card.getValue() + " of " + card.getColor());
-  }
-
-  /**
-   * Displays the hand of a dealer or player.
-
-   * @param name either dealer or player.
-   * @param hand to display each card of the hand.
-   * @param score to display the total score of a player's hand.
-   */
-  public void displayHand(String name, Iterable<model.Card> hand, int score) {
-    System.out.println(name + " Has: ");
-    for (model.Card c : hand) {
-      displayCard(c);
-    }
-    System.out.println("Score: " + score);
-    System.out.println("");
-  }
-
-  public void displayPlayerHand(Iterable<model.Card> hand, int score) {
-    displayHand("Player", hand, score);
-  }
-
-  public void displayDealerHand(Iterable<model.Card> hand, int score) {
-    displayHand("Dealer", hand, score);
-  }
-
-  /**
-   * Displays the new card of the player.
-
-   * @param card The card to display.
-   * @param score total score of that player's hand.
-   * @param hand the player's hand.
-   */
-  public void displayPlayerCard(model.Card card, int score, Iterable<Card> hand) {
-    System.out.print("Player draws: ");
-    displayCard(card);
-    System.out.println();
-  }
-
-  /**
-   * Displays the new card of the dealer.
-
-   * @param card the card to display.
-   * @param score total score of the dealer's hand
-   * @param hand dealer hand.
-   */
-  public void displayDealerCard(model.Card card, int score, Iterable<Card> hand) {
-    System.out.print("Dealer draws: ");
-    displayCard(card);
-    System.out.println();
-  }
-
-
-
-  /**
-   * Displays the winner of the game.
+   * Displays winner message when the game is over.
 
    * @param dealerIsWinner True if the dealer is the winner.
    */
@@ -114,9 +40,7 @@ public class EnglishView implements View {
       System.out.println("You Won!");
       System.out.println();
     }
-
   }
-
 
   /**
    * Displays pause used in observer pattern implementation requirement.

@@ -6,47 +6,92 @@ import model.Card;
 /**
  * Encapsulates the generic view functionality.
  */
-public interface View {
+public abstract class View {
 
   /**
    * Shows a welcome message.
    */
-  void displayWelcomeMessage();
+  public abstract void displayWelcomeMessage();
 
-  void displayMenu();
+  public abstract void displayMenu();
 
-  void newGameMessage();
+  public abstract void newGameMessage();
 
-  void displayCard(model.Card card);
+  public void displayCard(model.Card card) {
+    System.out.println("" + card.getValue() + " of " + card.getColor());
+  }
 
-  void displayHand(String name, Iterable<model.Card> hand, int score);
+  /**
+   * Displays hand.
 
-  void displayPlayerHand(Iterable<model.Card> hand, int score);
+   * @param name Either dealer or player.
+   * @param hand all cards.
+   * @param score total score.
+   */
+  public void displayHand(String name, Iterable<model.Card> hand, int score) {
+    System.out.println(name + " Has: ");
+    for (model.Card c : hand) {
+      displayCard(c);
+    }
+    System.out.println("Score: " + score);
+    System.out.println("");
+  }
 
-  void displayDealerHand(Iterable<model.Card> hand, int score);
+  public void displayPlayerHand(Iterable<model.Card> hand, int score) {
+    displayHand("Player", hand, score);
+  }
+
+  public void displayDealerHand(Iterable<model.Card> hand, int score) {
+    displayHand("Dealer", hand, score);
+  }
 
   /**
    * Returns pressed characters from the keyboard.
 
    * @return the pressed character.
    */
-  int getInput();
+  public int getInput() {
+    try {
+      int c = System.in.read();
+      while (c == '\r' || c == '\n') {
+        c = System.in.read();
+      }
+      return c;
+    } catch (java.io.IOException e) {
+      System.out.println("" + e);
+      return 0;
+    }
+  }
 
   /**
    * Displays a card.
 
    * @param card The card to display.
    */
-  void displayPlayerCard(model.Card card, int score, Iterable<Card> hand);
+  public void displayPlayerCard(model.Card card, int score, Iterable<Card> hand) {
+    System.out.print("Player draws: ");
+    displayCard(card);
+    System.out.println();
+  }
 
-  void displayDealerCard(model.Card card, int score, Iterable<Card> hand);
+  /**
+   * Displays the cad of the dealer.
 
+   * @param card newest card.
+   * @param score total score.
+   * @param hand all cards.
+   */
+  public void displayDealerCard(model.Card card, int score, Iterable<Card> hand) {
+    System.out.print("Dealer draws: ");
+    displayCard(card);
+    System.out.println();
+  }
   /**
    * Displays the winner of the game.
 
    * @param dealerIsWinner True if the dealer is the winner.
    */
-  void displayGameOver(boolean dealerIsWinner);
+  public abstract void displayGameOver(boolean dealerIsWinner);
 
-  void displayPause();
+  public abstract void displayPause();
 }

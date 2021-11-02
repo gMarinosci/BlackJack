@@ -6,7 +6,7 @@ import model.Card;
 /**
  * Implements a Swedish console view.
  */
-public class SwedishView implements View {
+public class SwedishView extends View {
 
   /**
    * Shows a welcome message.
@@ -30,65 +30,7 @@ public class SwedishView implements View {
   }
 
   /**
-   * Returns pressed characters from the keyboard.
-
-   * @return the pressed character.
-   */
-  public int getInput() {
-    try {
-      int c = System.in.read();
-      while (c == '\r' || c == '\n') {
-        c = System.in.read();
-      }
-      return c;
-    } catch (java.io.IOException e) {
-      System.out.println("" + e);
-      return 0;
-    }
-  }
-
-  public void displayCard(model.Card card) {
-    System.out.println("" + card.getValue() + " of " + card.getColor());
-  }
-
-  /**
-   * displays the hand of a player.
-
-   * @param name either player or dealer.
-   * @param hand hand of that player.
-   * @param score total score of the hand.
-   */
-  public void displayHand(String name, Iterable<model.Card> hand, int score) {
-    System.out.println(name + " Has: ");
-    for (model.Card c : hand) {
-      displayCard(c);
-    }
-    System.out.println("Score: " + score);
-    System.out.println("");
-  }
-
-  public void displayPlayerHand(Iterable<model.Card> hand, int score) {
-    displayHand("Player", hand, score);
-  }
-
-  public void displayDealerHand(Iterable<model.Card> hand, int score) {
-    displayHand("Dealer", hand, score);
-  }
-
-  /**
-   * Displays a card.
-
-   * @param card The card to display.
-   */
-  public void displayPlayerCard(model.Card card, int score, Iterable<Card> hand) {
-
-  }
-
-  public void displayDealerCard(model.Card card, int score, Iterable<Card> hand) {
-  }
-
-  /**
-   * Displays the winner of the game.
+   * Displays winner message when the game is over.
 
    * @param dealerIsWinner True if the dealer is the winner.
    */
@@ -112,6 +54,5 @@ public class SwedishView implements View {
       e.printStackTrace();
     }
   }
-
 
 }
