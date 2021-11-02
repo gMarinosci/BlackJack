@@ -27,6 +27,11 @@ public class EnglishView extends View {
     System.out.println("Type 'p' to start a new game or 'q' to quit.");
   }
 
+  /**
+   * Displays winner message when the game is over.
+
+   * @param dealerIsWinner True if the dealer is the winner.
+   */
   public void displayGameOver(boolean dealerIsWinner) {
     System.out.println("GameOver: ");
     if (dealerIsWinner) {

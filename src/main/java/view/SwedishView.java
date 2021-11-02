@@ -29,7 +29,11 @@ public class SwedishView extends View {
     System.out.println("Type 'p' to start a new game.");
   }
 
+  /**
+   * Displays winner message when the game is over.
 
+   * @param dealerIsWinner True if the dealer is the winner.
+   */
   public void displayGameOver(boolean dealerIsWinner) {
     System.out.println("Slut: ");
     if (dealerIsWinner) {

@@ -21,6 +21,13 @@ public abstract class View {
     System.out.println("" + card.getValue() + " of " + card.getColor());
   }
 
+  /**
+   * Displays hand.
+
+   * @param name Either dealer or player.
+   * @param hand all cards.
+   * @param score total score.
+   */
   public void displayHand(String name, Iterable<model.Card> hand, int score) {
     System.out.println(name + " Has: ");
     for (model.Card c : hand) {
@@ -67,6 +74,13 @@ public abstract class View {
     System.out.println();
   }
 
+  /**
+   * Displays the cad of the dealer.
+
+   * @param card newest card.
+   * @param score total score.
+   * @param hand all cards.
+   */
   public void displayDealerCard(model.Card card, int score, Iterable<Card> hand) {
     System.out.print("Dealer draws: ");
     displayCard(card);
