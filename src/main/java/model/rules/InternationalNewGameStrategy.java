@@ -6,7 +6,7 @@ import model.Deck;
 import model.Player;
 
 
-class InternationalNewGameStrategy implements NewGameStrategy {
+public class InternationalNewGameStrategy implements NewGameStrategy{
 
   public boolean newGame(Deck deck, Dealer dealer, Player player) {
     //player turn
@@ -17,5 +17,10 @@ class InternationalNewGameStrategy implements NewGameStrategy {
     player.playerTurn(deck, player, true);
 
     return true;
+  }
+
+  @Override
+  public void accept(NewGameRuleVisitor visitor) {
+    visitor.visit(this);
   }
 }

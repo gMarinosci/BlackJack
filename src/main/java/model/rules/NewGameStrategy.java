@@ -17,4 +17,6 @@ public interface NewGameStrategy {
    * @return True if the game could be started.
    */
   boolean newGame(Deck deck, Dealer dealer, Player player);
+
+  void accept(NewGameRuleVisitor visitor);
 }

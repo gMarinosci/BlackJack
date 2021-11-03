@@ -3,7 +3,7 @@ package model.rules;
 import model.Card;
 import model.Player;
 
-class Soft17HitStrategy implements HitStrategy {
+public class Soft17HitStrategy implements HitStrategy{
   private static final int hitLimit = 17;
 
   public boolean doHit(Player dealer) {
@@ -14,5 +14,10 @@ class Soft17HitStrategy implements HitStrategy {
       }
     }
     return dealer.calcScore() < hitLimit;
+  }
+
+  @Override
+  public void accept(HitRuleVisitor visitor) {
+    visitor.visit(this);
   }
 }

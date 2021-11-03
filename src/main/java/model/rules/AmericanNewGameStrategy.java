@@ -5,7 +5,7 @@ import model.Dealer;
 import model.Deck;
 import model.Player;
 
-class AmericanNewGameStrategy implements NewGameStrategy {
+public class AmericanNewGameStrategy implements NewGameStrategy{
 
   public boolean newGame(Deck deck, Dealer dealer, Player player) {
     //player turn
@@ -20,4 +20,7 @@ class AmericanNewGameStrategy implements NewGameStrategy {
     return true;
   }
 
+  public void accept(NewGameRuleVisitor visitor) {
+    visitor.visit(this);
+  }
 }

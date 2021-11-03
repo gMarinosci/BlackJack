@@ -101,7 +101,7 @@ public class Game {
     return this.player;
   }
 
-  public Player getDealer() {
+  public Dealer getDealer() {
     return this.dealer;
   }
 }

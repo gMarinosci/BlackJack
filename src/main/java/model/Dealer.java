@@ -107,4 +107,20 @@ public class Dealer extends Player {
     dealer.dealCard(c);
     notifySubscribers(c, 2);
   }
+
+  public WinsStrategy getWinsRule() {
+    return winsRule;
+  }
+
+  public Deck getDeck() {
+    return deck;
+  }
+
+  public NewGameStrategy getNewGameRule() {
+    return newGameRule;
+  }
+
+  public HitStrategy getHitRule() {
+    return hitRule;
+  }
 }

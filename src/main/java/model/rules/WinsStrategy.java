@@ -14,4 +14,6 @@ public interface WinsStrategy {
    * @return True if either the player or dealer won.
    */
   boolean winGame();
+
+  void accept(WinRuleVisitor visitor);
 }

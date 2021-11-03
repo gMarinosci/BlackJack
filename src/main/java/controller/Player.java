@@ -2,8 +2,7 @@ package controller;
 
 import model.Card;
 import model.Game;
-import view.EnglishView;
-import view.View;
+import view.*;
 
 
 /**
@@ -21,14 +20,17 @@ public class Player implements model.NewCardObserver {
     game.getDealer().addSubscriber(this);
     status = false;
   }
-
   /**
    * Runs the play use case.
 
    * @return False when the player wants to quit and selection() returns false.
    */
   public boolean play() {
+
     view.displayWelcomeMessage();
+    game.getDealer().getNewGameRule().accept(new DisplayNewGameRuleVisitor());
+    game.getDealer().getHitRule().accept(new DisplayHitRuleVisitor());
+    game.getDealer().getWinsRule().accept(new DisplayWinRuleVisitor());
 
     while (selection()) {
 
