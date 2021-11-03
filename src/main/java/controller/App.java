@@ -16,10 +16,19 @@ public class App {
   public static void main(String[] args) {
 
 
-    Player ctrl = new Player();
+    Player ctrl = null;
+    try {
+      ctrl = new Player();
+    } catch (CloneNotSupportedException e) {
+      e.printStackTrace();
+    }
 
-    while (ctrl.play()) {
+    try {
+      while (ctrl.play()) {
 
+      }
+    } catch (CloneNotSupportedException e) {
+      e.printStackTrace();
     }
   }
 }

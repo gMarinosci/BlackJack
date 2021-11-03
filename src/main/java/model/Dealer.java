@@ -1,11 +1,15 @@
 package model;
 
-import model.rules.*;
+
+import model.rules.AbstractRulesFactory;
+import model.rules.HitStrategy;
+import model.rules.NewGameStrategy;
+import model.rules.WinsStrategy;
 
 /**
  * Represents a dealer player that handles the deck of cards and runs the game using rules.
  */
-public class Dealer extends Player {
+public class Dealer extends Player implements Cloneable {
   private WinsStrategy winsRule;
   private Deck deck;
   private NewGameStrategy newGameRule;
@@ -110,10 +114,6 @@ public class Dealer extends Player {
 
   public WinsStrategy getWinsRule() {
     return winsRule;
-  }
-
-  public Deck getDeck() {
-    return deck;
   }
 
   public NewGameStrategy getNewGameRule() {

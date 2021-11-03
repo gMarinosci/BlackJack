@@ -4,6 +4,10 @@ import model.rules.AmericanNewGameStrategy;
 import model.rules.InternationalNewGameStrategy;
 import model.rules.NewGameRuleVisitor;
 
+/**
+ * Implements the NewGameRuleVisitor interface by displaying what hit rule is being
+ * used at the start of a new game.
+ */
 public class DisplayNewGameRuleVisitor implements NewGameRuleVisitor {
 
   @Override

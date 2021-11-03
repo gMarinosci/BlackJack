@@ -5,9 +5,19 @@ import model.Dealer;
 import model.Deck;
 import model.Player;
 
+/**
+ * Describes the international rules for the start of a new game.
+ */
+public class InternationalNewGameStrategy implements NewGameStrategy {
 
-public class InternationalNewGameStrategy implements NewGameStrategy{
+  /**
+   * Player receives on card while the dealer receives only one.
 
+   * @param deck The deck to use to get cards from.
+   * @param dealer The dealer to deal cards to.
+   * @param player The player to deal cards to.
+   * @return true.
+   */
   public boolean newGame(Deck deck, Dealer dealer, Player player) {
     //player turn
     player.playerTurn(deck, player, true);

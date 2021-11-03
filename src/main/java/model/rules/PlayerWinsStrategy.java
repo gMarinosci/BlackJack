@@ -7,7 +7,7 @@ import model.Player;
 /**
  * Functionality that lets the player win, if the score is equal.
  */
-public class PlayerWinsStrategy implements WinsStrategy{
+public class PlayerWinsStrategy implements WinsStrategy {
 
 
   /**

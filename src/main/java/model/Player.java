@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Represents a player in the Black Jack game. A Player has a hand of cards.
  */
-public class Player {
+public class Player implements Cloneable {
   private List<Card.Mutable> hand;
   protected final int maxScore = 21;
   ArrayList<NewCardObserver> subscribers;
@@ -118,5 +118,10 @@ public class Player {
     c.show(bool);
     player.dealCard(c);
     notifySubscribers(c, 1);
+  }
+
+  @Override
+  protected Object clone() throws CloneNotSupportedException {
+    return super.clone();
   }
 }

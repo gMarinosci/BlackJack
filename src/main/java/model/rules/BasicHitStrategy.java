@@ -2,6 +2,9 @@ package model.rules;
 
 import model.Player;
 
+/**
+ * Describes the hit behaviour of the dealer.
+ */
 public class BasicHitStrategy implements HitStrategy {
   private static final int hitLimit = 17;
 

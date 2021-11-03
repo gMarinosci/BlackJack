@@ -2,7 +2,11 @@ package controller;
 
 import model.Card;
 import model.Game;
-import view.*;
+import view.DisplayHitRuleVisitor;
+import view.DisplayNewGameRuleVisitor;
+import view.DisplayWinRuleVisitor;
+import view.EnglishView;
+import view.View;
 
 
 /**
@@ -13,7 +17,7 @@ public class Player implements model.NewCardObserver {
   View view;
   boolean status;
 
-  Player() {
+  Player() throws CloneNotSupportedException {
     game = new Game();
     view = new EnglishView();
     game.getPlayer().addSubscriber(this);
@@ -25,7 +29,7 @@ public class Player implements model.NewCardObserver {
 
    * @return False when the player wants to quit and selection() returns false.
    */
-  public boolean play() {
+  public boolean play() throws CloneNotSupportedException {
 
     view.displayWelcomeMessage();
     game.getDealer().getNewGameRule().accept(new DisplayNewGameRuleVisitor());

@@ -1,11 +1,14 @@
 package model.rules;
 
+/**
+ * Abstract factory interface for the rules of the game.
+ */
 public interface AbstractRulesFactory {
 
-  public HitStrategy createHitRule();
+  HitStrategy createHitRule();
 
-  public WinsStrategy createWinRule();
+  WinsStrategy createWinRule();
 
-  public NewGameStrategy createGameRule();
+  NewGameStrategy createGameRule();
 
 }

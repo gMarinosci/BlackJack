@@ -1,5 +1,9 @@
 package model.rules;
 
+/**
+ * Describes a combination of rules to implement the
+ * abstract factory.
+ */
 public class AmericanRulesFactory implements AbstractRulesFactory {
   @Override
   public HitStrategy createHitRule() {

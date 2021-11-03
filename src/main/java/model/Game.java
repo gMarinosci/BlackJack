@@ -97,11 +97,11 @@ public class Game {
     return player.calcScore();
   }
 
-  public Player getPlayer() {
-    return this.player;
+  public Player getPlayer() throws CloneNotSupportedException {
+    return (Player) this.player.clone();
   }
 
-  public Dealer getDealer() {
-    return this.dealer;
+  public Dealer getDealer() throws CloneNotSupportedException {
+    return (Dealer) this.dealer.clone();
   }
 }

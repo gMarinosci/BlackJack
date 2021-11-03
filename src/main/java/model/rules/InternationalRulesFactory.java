@@ -1,5 +1,8 @@
 package model.rules;
 
+/**
+ * Combination of rules to implement the abstract factory.
+ */
 public class InternationalRulesFactory implements AbstractRulesFactory {
 
   @Override
