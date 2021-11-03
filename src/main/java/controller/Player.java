@@ -2,6 +2,7 @@ package controller;
 
 import model.Card;
 import model.Game;
+import model.rules.AbstractRulesFactory;
 import view.DisplayHitRuleVisitor;
 import view.DisplayNewGameRuleVisitor;
 import view.DisplayWinRuleVisitor;
@@ -17,8 +18,8 @@ public class Player implements model.NewCardObserver {
   View view;
   boolean status;
 
-  Player() throws CloneNotSupportedException {
-    game = new Game();
+  Player(AbstractRulesFactory rulesFactory) throws CloneNotSupportedException {
+    game = new Game(rulesFactory);
     view = new EnglishView();
     game.getPlayer().addSubscriber(this);
     game.getDealer().addSubscriber(this);

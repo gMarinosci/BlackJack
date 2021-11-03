@@ -1,6 +1,7 @@
 package controller;
 
 import model.Game;
+import model.rules.AmericanRulesFactory;
 import view.EnglishView;
 import view.View;
 
@@ -18,7 +19,7 @@ public class App {
 
     Player ctrl = null;
     try {
-      ctrl = new Player();
+      ctrl = new Player(new AmericanRulesFactory());
     } catch (CloneNotSupportedException e) {
       e.printStackTrace();
     }
