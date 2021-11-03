@@ -12,11 +12,11 @@ public class DisplayWinRuleVisitor implements WinRuleVisitor {
 
   @Override
   public void visit(DealerWinsStrategy dealerWinsStrategy) {
-    System.out.println("Win Rule: ");
+    System.out.println("Win Rule: Dealer wins in case of a draw\n");
   }
 
   @Override
   public void visit(PlayerWinsStrategy playerWinsStrategy) {
-    System.out.println("Win Rule: ");
+    System.out.println("Win Rule: Player wins in case of a draw\n");
   }
 }

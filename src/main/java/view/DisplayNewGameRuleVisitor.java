@@ -12,11 +12,11 @@ public class DisplayNewGameRuleVisitor implements NewGameRuleVisitor {
 
   @Override
   public void visit(AmericanNewGameStrategy americanNewGameStrategy) {
-    System.out.println("New Game Rule: ");
+    System.out.println("\nGame Rule: American");
   }
 
   @Override
   public void visit(InternationalNewGameStrategy internationalNewGameStrategy) {
-    System.out.println("New Game Rule: ");
+    System.out.println("\nGame Rule: International");
   }
 }
