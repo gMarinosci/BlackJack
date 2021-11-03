@@ -6,9 +6,13 @@ The application uses the model-view-controller (MVC) architectural pattern. The 
 
 ![class diagram](img/class_diagram.jpg)
 
-## Updated Class Diagram
+## Grade 3 Class Diagram
+![grade 3 class diagram](img/Grade_3_class_diagram.png)
+The class diagram shows all changes that have been implemented in order to fulfill the requirements for grade 3.
+
+## Grade 2 Class Diagram
 The updated class diagram shows all changes that have been implemented in order to fulfill the requirements for grade 2.
-![new class diagram](img/new_class-diagram.png)
+![grade 2 class diagram](img/new_class-diagram.png)
 
 ## Stand - Sequence Diagram
 This is the detailed sequence diagram for the `Game.stand` method. This is what should be implemented.
