@@ -7,7 +7,7 @@ import model.Card;
 /**
  * Implements an english console view.
  */
-public class EnglishView extends View {
+public class EnglishView extends ViewBase {
 
   /**
    * Shows a welcome message.

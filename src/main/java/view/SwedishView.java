@@ -6,7 +6,7 @@ import model.Card;
 /**
  * Implements a Swedish console view.
  */
-public class SwedishView extends View {
+public class SwedishView extends ViewBase {
 
   /**
    * Shows a welcome message.
