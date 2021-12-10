@@ -26,6 +26,4 @@ public interface View {
   void displayPlayerCard(model.Card card, int score, Iterable<Card> hand);
 
   void displayDealerCard(model.Card card, int score, Iterable<Card> hand);
-
-
 }

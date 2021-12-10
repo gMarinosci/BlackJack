@@ -1,10 +1,9 @@
 package model.rules;
 
-import model.Card;
 import model.Dealer;
 import model.Deck;
 import model.Player;
-import view.DisplayRulesVisitor;
+import view.EnglishRulesVisitor;
 
 /**
  * Describes the American rules for the start of a new game.
@@ -33,7 +32,7 @@ public class AmericanNewGameStrategy implements NewGameStrategy {
     return true;
   }
 
-  public void accept(DisplayRulesVisitor visitor) {
+  public void accept(EnglishRulesVisitor visitor) {
     visitor.visit(this);
   }
 }

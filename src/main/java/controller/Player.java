@@ -3,7 +3,7 @@ package controller;
 import model.Card;
 import model.Game;
 import model.rules.AbstractRulesFactory;
-import view.DisplayRulesVisitor;
+import view.EnglishRulesVisitor;
 import view.EnglishView;
 import view.View;
 
@@ -31,9 +31,9 @@ public class Player implements model.NewCardObserver {
   public boolean play() throws CloneNotSupportedException {
 
     view.displayWelcomeMessage();
-    game.getDealer().getNewGameRule().accept(new DisplayRulesVisitor());
-    game.getDealer().getHitRule().accept(new DisplayRulesVisitor());
-    game.getDealer().getWinsRule().accept(new DisplayRulesVisitor());
+    game.getDealer().getNewGameRule().accept(new EnglishRulesVisitor());
+    game.getDealer().getHitRule().accept(new EnglishRulesVisitor());
+    game.getDealer().getWinsRule().accept(new EnglishRulesVisitor());
 
     while (selection()) {
 

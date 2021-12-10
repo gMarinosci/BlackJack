@@ -12,7 +12,7 @@ import model.rules.Soft17HitStrategy;
  * Implements the RulesVisitor interface by displaying what combination
  * of rules is being used in the game.
  */
-public class DisplayRulesVisitor implements RulesVisitor {
+public class EnglishRulesVisitor implements RulesVisitor {
 
   @Override
   public void visit(DealerWinsStrategy dealerWinsStrategy) {
