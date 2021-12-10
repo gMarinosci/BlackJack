@@ -80,10 +80,4 @@ public abstract class ViewBase implements View {
     displayCard(card);
     System.out.println();
   }
-  /**
-   * Displays the winner of the game.
-
-   * @param dealerIsWinner True if the dealer is the winner.
-   */
-
 }

@@ -2,26 +2,30 @@ package view;
 
 import model.Card;
 
+/**
+ * Interface for the implementation of the view.
+ */
 public interface View {
-    void displayWelcomeMessage();
 
-    void displayMenu();
+  void displayWelcomeMessage();
 
-    void newGameMessage();
+  void displayMenu();
 
-    void displayGameOver(boolean dealerIsWinner);
+  void newGameMessage();
 
-    void displayPause();
+  void displayGameOver(boolean dealerIsWinner);
 
-    void displayPlayerHand(Iterable<model.Card> hand, int score);
+  void displayPause();
 
-    void displayDealerHand(Iterable<model.Card> hand, int score);
+  void displayPlayerHand(Iterable<model.Card> hand, int score);
 
-    int getInput();
+  void displayDealerHand(Iterable<model.Card> hand, int score);
 
-    void displayPlayerCard(model.Card card, int score, Iterable<Card> hand);
+  int getInput();
 
-    void displayDealerCard(model.Card card, int score, Iterable<Card> hand);
+  void displayPlayerCard(model.Card card, int score, Iterable<Card> hand);
+
+  void displayDealerCard(model.Card card, int score, Iterable<Card> hand);
 
 
 }

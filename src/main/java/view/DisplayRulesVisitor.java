@@ -1,6 +1,12 @@
 package view;
 
-import model.rules.*;
+import model.rules.AmericanNewGameStrategy;
+import model.rules.BasicHitStrategy;
+import model.rules.DealerWinsStrategy;
+import model.rules.InternationalNewGameStrategy;
+import model.rules.PlayerWinsStrategy;
+import model.rules.RulesVisitor;
+import model.rules.Soft17HitStrategy;
 
 /**
  * Implements the RulesVisitor interface by displaying what combination
