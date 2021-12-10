@@ -2,6 +2,7 @@ package model.rules;
 
 import model.Card;
 import model.Player;
+import view.DisplayRulesVisitor;
 
 /**
  * Describes the hit behaviour of the dealer.
@@ -29,7 +30,7 @@ public class Soft17HitStrategy implements HitStrategy {
   }
 
   @Override
-  public void accept(HitRuleVisitor visitor) {
+  public void accept(DisplayRulesVisitor visitor) {
     visitor.visit(this);
   }
 }

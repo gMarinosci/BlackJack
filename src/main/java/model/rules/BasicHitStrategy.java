@@ -1,6 +1,7 @@
 package model.rules;
 
 import model.Player;
+import view.DisplayRulesVisitor;
 
 /**
  * Describes the hit behaviour of the dealer.
@@ -13,7 +14,7 @@ public class BasicHitStrategy implements HitStrategy {
   }
 
   @Override
-  public void accept(HitRuleVisitor visitor) {
+  public void accept(DisplayRulesVisitor visitor) {
     visitor.visit(this);
   }
 }

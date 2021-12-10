@@ -3,6 +3,7 @@ package model.rules;
 import model.Dealer;
 import model.Deck;
 import model.Player;
+import view.DisplayRulesVisitor;
 
 /**
  * Rule interface for managing who wins the game.
@@ -15,5 +16,5 @@ public interface WinsStrategy {
    */
   boolean winGame();
 
-  void accept(WinRuleVisitor visitor);
+  void accept(DisplayRulesVisitor visitor);
 }

@@ -1,6 +1,7 @@
 package model.rules;
 
 import model.Player;
+import view.DisplayRulesVisitor;
 
 /**
  * Rule interface that encapsulates when a player (the dealer) should take more cards.
@@ -14,5 +15,5 @@ public interface HitStrategy {
    */
   boolean doHit(Player dealer);
 
-  void accept(HitRuleVisitor visitor);
+  void accept(DisplayRulesVisitor visitor);
 }

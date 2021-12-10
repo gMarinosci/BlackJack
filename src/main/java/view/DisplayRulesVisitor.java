@@ -3,10 +3,10 @@ package view;
 import model.rules.*;
 
 /**
- * Implements the WinRuleVisitor interface by displaying what hit rule is being
- * used at the start of a new game.
+ * Implements the RulesVisitor interface by displaying what combination
+ * of rules is being used in the game.
  */
-public class DisplayRulesVisitor implements WinRuleVisitor, HitRuleVisitor, NewGameRuleVisitor {
+public class DisplayRulesVisitor implements RulesVisitor {
 
   @Override
   public void visit(DealerWinsStrategy dealerWinsStrategy) {

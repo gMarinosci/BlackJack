@@ -3,6 +3,7 @@ package model.rules;
 import model.Dealer;
 import model.Deck;
 import model.Player;
+import view.DisplayRulesVisitor;
 
 /**
  * Functionality that lets the player win, if the score is equal.
@@ -20,7 +21,7 @@ public class PlayerWinsStrategy implements WinsStrategy {
   }
 
   @Override
-  public void accept(WinRuleVisitor visitor) {
+  public void accept(DisplayRulesVisitor visitor) {
     visitor.visit(this);
   }
 }

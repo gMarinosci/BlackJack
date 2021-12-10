@@ -3,6 +3,7 @@ package model.rules;
 import model.Dealer;
 import model.Deck;
 import model.Player;
+import view.DisplayRulesVisitor;
 
 /**
  * Rule interface for mangaing the start of a new game. I.e. dealing the cards.
@@ -18,5 +19,5 @@ public interface NewGameStrategy {
    */
   boolean newGame(Deck deck, Dealer dealer, Player player);
 
-  void accept(NewGameRuleVisitor visitor);
+  void accept(DisplayRulesVisitor visitor);
 }
