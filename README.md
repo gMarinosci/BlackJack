@@ -1,4 +1,4 @@
-# Assignment 3 Objecr Oriented analysis and Design course
+# Assignment 3 Object Oriented analysis and Design course
 
 NOTE: The project was imported from a private GitLab accessible only by Teachers and Students
 
