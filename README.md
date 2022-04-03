@@ -1,7 +1,6 @@
-# Assignment 3, grade 3
-#### Group members: 
-#### Gabriele Marinosci gm222hj, Ratmir Shchadrynski rs223ck, Raya Wagner rw222hi
+# Assignment 3 Objecr Oriented analysis and Design course
 
-The program is started by running the App class.
+NOTE: The project was imported from a private GitLab accessible only by Teachers and Students
 
-The 2 bugs that were found in the model/game.java class when handing in grade 2, were fixed using the clone functionality to avoid unnecessary exposure.
+This project consisted in the implementation of a simple BlackJack game with a command line interface.
+The system had to be implemented using the MVC pattern and some other design pattern were used for the implementation of different unctionalities.
